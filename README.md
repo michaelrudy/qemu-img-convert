@@ -18,7 +18,7 @@ This guide provides the complete process to prepare your Linux VM and successful
 
 ### Phase 1: Prepare the Linux VM (Critical!)
 
-**⚠️ Important:** These steps must be performed INSIDE the running Linux VM before conversion. Skipping this phase will result in a non-bootable VM in Hyper-V.
+**Important:** These steps must be performed INSIDE the running Linux VM before conversion. Skipping this phase will result in a non-bootable VM in Hyper-V.
 
 #### 1. Add Hyper-V drivers to dracut config
 
