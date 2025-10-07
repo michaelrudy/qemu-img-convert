@@ -20,7 +20,7 @@ This guide provides the complete process to prepare your Linux VM and successful
 
 **⚠️ Important:** These steps must be performed INSIDE the running Linux VM before conversion. Skipping this phase will result in a non-bootable VM in Hyper-V.
 
-#### 🧰 1. Add Hyper-V drivers to dracut config
+#### 1. Add Hyper-V drivers to dracut config
 
 ```bash
 sudo tee /etc/dracut.conf.d/hyperv.conf >/dev/null <<'EOF'
@@ -31,7 +31,7 @@ EOF
 
 This tells dracut to always include the Hyper-V bus, storage, and network drivers in the initramfs, and not to restrict to just the current host's drivers.
 
-#### 🧠 2. Rebuild initramfs for the current running kernel
+#### 2. Rebuild initramfs for the current running kernel
 
 ```bash
 sudo dracut -f --kver "$(uname -r)"
@@ -39,7 +39,7 @@ sudo dracut -f --kver "$(uname -r)"
 
 This usually takes 15–45 seconds and regenerates `/boot/initramfs-<your-kernel>.img` with those Hyper-V modules baked in.
 
-#### 📜 3. (Optional but smart) Confirm the image exists
+#### 3. (Optional but smart) Confirm the image exists
 
 ```bash
 ls -lh /boot/initramfs-$(uname -r).img
@@ -47,7 +47,7 @@ ls -lh /boot/initramfs-$(uname -r).img
 
 → Should see a 50–100 MB file.
 
-#### 📌 4. Check /etc/fstab
+#### 4. Check /etc/fstab
 
 Make sure you're using UUID= entries (Hyper-V uses `/dev/sdX` rather than `/dev/vdX`):
 
