@@ -1,4 +1,4 @@
-# qemu-img-convert
+# QCOW2VHD
 Documentation on Converting KVM QCOW2 Virtual Machine Disks into Importable Hyper-V VHDX Format
 
 ## Overview
